@@ -1,5 +1,5 @@
 # Mobile UET INT3120_20
-This is repo of Đinh Ngọc Vân from class INT3120_20 mobile UET. \n
+This is repo of Đinh Ngọc Vân from class INT3120_20 mobile UET. 
 
 Name: Đinh Ngọc Vân
 Student ID: 19021390
