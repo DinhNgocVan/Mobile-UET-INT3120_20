@@ -22,8 +22,10 @@ This repo will follow this guide: https://docs.google.com/document/d/1BeG72tHCtF
 1. I follow the newest flutter installation on youtube to install flutter the rightest way. Create and run success Hello App.
 2. I change the style like the app color, text style to make the app more unique.
 
+![274664992_1138354223594058_6883227656529042552_n](https://user-images.githubusercontent.com/57166656/156715680-5fde2066-711e-4a42-be40-8edbd5a623af.png)
+
 **WEEK2**
-Load image, icon, column, row, listView
+Load image, icon, column, row, listView and state
 
 ![274060344_3084770865104536_4408768463400887839_n](https://user-images.githubusercontent.com/57166656/156715101-2c2a0f55-0573-46e3-8bff-b02e8dcdb136.png)
 
