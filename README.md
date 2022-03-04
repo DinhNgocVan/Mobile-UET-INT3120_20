@@ -24,6 +24,7 @@ This repo will follow this guide: https://docs.google.com/document/d/1BeG72tHCtF
 
 **WEEK2**
 Load image, icon, column, row, listView
+
 ![274060344_3084770865104536_4408768463400887839_n](https://user-images.githubusercontent.com/57166656/156715101-2c2a0f55-0573-46e3-8bff-b02e8dcdb136.png)
 
 ![273693334_267254315571066_6865486757354974604_n](https://user-images.githubusercontent.com/57166656/156715181-a428fd2a-8ea8-4dde-9238-91c3aa9a9c6a.png)
