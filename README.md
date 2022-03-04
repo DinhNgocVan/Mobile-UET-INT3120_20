@@ -24,4 +24,8 @@ This repo will follow this guide: https://docs.google.com/document/d/1BeG72tHCtF
 
 **WEEK2**
 Load image, icon, column, row, listView
-![This is an image]https://i.imgur.com/gE3N5bP.png
+![274060344_3084770865104536_4408768463400887839_n](https://user-images.githubusercontent.com/57166656/156715101-2c2a0f55-0573-46e3-8bff-b02e8dcdb136.png)
+
+![273693334_267254315571066_6865486757354974604_n](https://user-images.githubusercontent.com/57166656/156715181-a428fd2a-8ea8-4dde-9238-91c3aa9a9c6a.png)
+
+![273723002_686838049397404_6588324122398015172_n](https://user-images.githubusercontent.com/57166656/156715314-420d89a1-0c24-4bbe-bdb5-e73e2a063bce.png)
