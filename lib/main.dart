@@ -13,78 +13,165 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
     return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          child: Container(
-            /*height: 100.0,
-            width: 100.0,
-            color: Colors.yellow,*/
-            decoration: const BoxDecoration(
-              border: Border(
-                top: BorderSide(width: 10.0, color: Colors.pink),
-                left: BorderSide(width: 10.0, color: Colors.pink),
-                right: BorderSide(width: 10.0, color: Colors.pink),
-                bottom: BorderSide(width: 10.0, color: Colors.pink),
-              ),
-            ),
-            child: Container(
-              padding: const
-              EdgeInsets.symmetric(horizontal: 20.0, vertical: 2.0),
-              decoration: const BoxDecoration(
-                border: Border(
-                  top: BorderSide(width: 10.0, color: Colors.lightBlue),
-                  left: BorderSide(width: 10.0, color: Colors.lightBlue),
-                  right: BorderSide(width: 10.0, color: Colors.lightBlue),
-                  bottom: BorderSide(width: 10.0, color: Colors.lightBlue),
-                ),
-                color: Colors.yellow,
-              ),
-              child: const Text(
-                  'Hello World',textAlign: TextAlign.center, style: TextStyle(color: Colors.black, letterSpacing: 10.0, fontSize: 30,),
-                  textDirection: TextDirection.ltr,
-              ),
-            ),
-          ),
-          /*Text(wordPair.asPascalCase,
-                      style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-                     ),*/
-                //load image
-                 /*Icon(
-                   Icons.favorite,
-                   color: Colors.pink,
-                   size: 100.0,
-                   semanticLabel: 'Text to announce in accessibility modes',
-                 ),*/
-                  /*Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const <Widget>[
-                      Icon(
-                        Icons.favorite,
-                        color: Colors.pink,
-                        size: 24.0,
-                        semanticLabel: 'Text to announce in accessibility modes',
-                      ),
-                      Icon(
-                        Icons.favorite_border,
-                        color: Colors.green,
-                        size: 30.0,
-                      ),
-                    ],
-                  )*/
-        ),
+      title: 'My First App',
+      theme: ThemeData(
+        primarySwatch: Colors.lightBlue,
       ),
+      home: const MyHomePage(title: 'Hello'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title:Text('Ocean series'),),
+        body: ListView(
+          shrinkWrap: true, padding: const EdgeInsets.fromLTRB(2.0, 10.0, 2.0, 10.0),
+          children: <Widget> [
+            Image.asset('assets/girl.jpg'),
+            Product(
+              name: "Cat",
+              description: "Cat with ocean",
+              price: 800,
+              image: '1.jpg'
+            ),
+            Product(
+              name: "Cold",
+              description: "Cold in ocean",
+              price: 2000,
+              image: "2.jpg"
+            ),
+            Product(
+              name: "Ocean",
+              description: "Ocean in your eyes",
+              price: 1500,
+              image: "3.jpg"
+            ),
+            Product(
+            name: "Blue",
+            description: "Deep blue",
+            price: 100,
+            image: "4.jpg"
+            ),
+          ]
+      )
+    );
+  }
+}
+
+class RatingBox extends StatefulWidget {
+  @override
+  _RatingBoxState createState() =>
+      _RatingBoxState();
+}
+class _RatingBoxState extends State<RatingBox> {
+  int _rating = 0;
+  void _setRatingAsOne() {
+    setState( () {
+      _rating = 1;
+    });
+  }
+  void _setRatingAsTwo() {
+    setState( () {
+      _rating = 2;
+    });
+  }
+  void _setRatingAsThree() {
+    setState( () {
+      _rating = 3;
+    });
+  }
+  Widget build(BuildContext context) {
+    double _size = 20;
+    print(_rating);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            icon: (_rating >= 1 ? Icon(Icons.star, size: _size,) :
+            Icon(Icons.star_border, size: _size,)),
+            color: Colors.red[500],
+            onPressed: _setRatingAsOne,
+            iconSize: _size,
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            icon: (_rating >= 2 ? Icon(Icons.star, size: _size,) :
+            Icon(Icons.star_border, size: _size,)),
+            color: Colors.red[500],
+            onPressed: _setRatingAsTwo,
+            iconSize: _size,
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            icon: (_rating >= 3 ? Icon(Icons.star, size: _size,) :
+            Icon(Icons.star_border, size: _size,)),
+            color: Colors.red[500],
+            onPressed: _setRatingAsThree,
+            iconSize: _size,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+class Product extends StatelessWidget {
+  const Product({Key? key, required this.name, required this.description, required this.price, required this.image}) : super(key: key);
+  final String name;
+  final String description;
+  final int price;
+  final String image;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        padding: EdgeInsets.all(2), height: 120,  child: Card(
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
+          Image.asset("assets/" +image, width: 200, height: 100,), Expanded(
+              child: Container(
+                  padding: EdgeInsets.all(5), child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+
+                  Text(this.name, style: TextStyle(fontWeight: FontWeight.bold)), Text(this.description),
+                  Text("Price: " + this.price.toString()), RatingBox(),
+                ],
+              )
+              )
+          )
+        ]
+        )
+    )
+    );
+  }
+}
+
 
 
 
